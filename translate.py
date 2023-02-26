@@ -39,18 +39,18 @@ class Translation:
         self.logger = logger
 
     def translate(
-            self, target_language: str, source_language: str = 'auto'
+            self, target_language: str, source_language: str = "auto"
     ) -> None:
         counter = 0
         files_count = len(self.files)
         for file in self.files:
             print(f"Translating {file}...")
             counter += 1
-            with open(file, 'r') as f:
-                soup = BeautifulSoup(f, 'html.parser')
+            with open(file, "r") as f:
+                soup = BeautifulSoup(f, "html.parser")
                 text = soup.find_all(string=True)
 
-                soup_before = str(soup.prettify('utf-8'))
+                soup_before = str(soup.prettify("utf-8"))
 
                 for t in text:
                     if t.parent.name not in self.blacklist and t.split():
@@ -66,10 +66,10 @@ class Translation:
                             self.logger.error(e)
                             pass
 
-            with open(file, 'wb') as f:
-                f.write(soup.prettify('utf-8'))
+            with open(file, "wb") as f:
+                f.write(soup.prettify("utf-8"))
 
-            soup_after = str(soup.prettify('utf-8'))
+            soup_after = str(soup.prettify("utf-8"))
             try:
                 assert soup_before != soup_after, "Translation failed."
             except AssertionError as e:

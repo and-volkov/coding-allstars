@@ -7,9 +7,9 @@ from selenium.webdriver.firefox.options import Options
 driver = webdriver.Firefox()
 options = Options()
 options.headless = True
-options.page_load_strategy = 'eager'
+options.page_load_strategy = "eager"
 
-url = 'https://www.classcentral.com/'
+url = "https://www.classcentral.com/"
 file = "/Users/and_volkov/Dev/coding-allstars/downloaded/index.html"
 driver.get(url)
 time.sleep(30)

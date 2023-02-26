@@ -7,11 +7,10 @@ def get_html_files() -> list[str]:
     html_files = []
     for root, dirs, files in os.walk(root_dir):
         for file in files:
-            with open(os.path.join(root, file), 'r') as f:
+            with open(os.path.join(root, file), "r") as f:
                 try:
-                    if f.readline().startswith('<!DOCTYPE html>'):
+                    if f.readline().startswith("<!DOCTYPE html>"):
                         html_files.append(os.path.join(root, file))
                 except UnicodeDecodeError:
                     pass
     return html_files
-
