@@ -60,7 +60,6 @@ class Translation:
                                 dest=target_language,
                                 src=source_language,
                             ).text
-                            print(translated)
                             t.replace_with(translated)
                         except Exception as e:
                             self.logger.error(e)
