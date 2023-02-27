@@ -9,7 +9,7 @@ def get_html_files() -> list[str]:
         for file in files:
             with open(os.path.join(root, file), "r") as f:
                 try:
-                    if f.readline().startswith("<!DOCTYPE html>"):
+                    if "<!doctype html>" in f.readline().lower():
                         html_files.append(os.path.join(root, file))
                 except UnicodeDecodeError:
                     pass

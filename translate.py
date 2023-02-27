@@ -44,7 +44,7 @@ class Translation:
         counter = 0
         files_count = len(self.files)
         for file in self.files:
-            print(f"Translating {file}...")
+            self.logger.info(f"Translating {file}")
             counter += 1
             with open(file, "r") as f:
                 soup = BeautifulSoup(f, "html.parser")

@@ -9,7 +9,7 @@
 * GNU Wget
 
 ### Web page is available on
-[Web-page](http://167.99.129.13/index.html)
+[Web-page](http://167.99.129.13/www.classcentral.com/index.html)
 
 ### About project
 I used wget to get all html pages with depth 1 except main page. 
